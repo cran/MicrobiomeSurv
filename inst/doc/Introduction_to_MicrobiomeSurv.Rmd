@@ -1,0 +1,25 @@
+---
+title: "Introduction to MicrobiomeSurv"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to MicrobiomeSurv}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MicrobiomeSurv)
+```
+
+Identifying taxa that can be used to predict the time to develop Type 1 Diabetes (T1D) using various forms of microbiome data has been widely discussed in the literature, but not fully developed. The aim of the analysis is to clarify individuals as high or low risk to developed T1D in a follow-up control experiment in which subjects are randomized into two treatment groups and the time to develop T1D is monitored. 
+We present several methods to estimate the microbiome risk score for the time to developed T1D such as the majority voting technique, LASSO, Elastic net, supervised principle component analysis (SPCA), and supervised partial least squares analysis (SPLS).  All estimation methods were evaluated within a l-fold Monte Carlo Cross Validation (MCCV) loop. Within the evaluation process, validation is accessed using the hazard ratios (HR) distribution of the test set. The resampling-based inference is implemented using the permutation technique.
+
+A software tool to conduct such an analysis is not available yet. The R package MicrobiomeSurv is a user-friendly data analysis tool, both for modeling and visualization for this type of application. The package can be used for analysis at any level of interest in the microbiome ecosystem (OTUs, family, kingdom level, etc.).
+
